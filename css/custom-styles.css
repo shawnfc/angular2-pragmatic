@@ -2,3 +2,9 @@
     height: 200px;
     width: 200px;
 }
+
+.voteDiv {
+    width: 20px;
+    text-align: center;
+    color: #ccc;
+}

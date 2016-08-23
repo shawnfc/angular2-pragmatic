@@ -2,21 +2,26 @@ import {Component} from 'angular2/core';
 import {CoursesComponent} from "./courses.component";
 import {AuthorsComponent} from "./authors.component";
 import {FavoriteComponent} from "./favorite.component"
+import {LikeComponent} from "./like.component";
+import {VoteComponent} from "./vote.component";
 
 
 @Component({
     selector: 'my-app',
     template: `
-                <img [src]="imageUrl" alt="Shawn Conrad" id="mainImage">
+                <img [src]="imageUrl" alt="Shawn Conrad" id="mainImage"><br>
+                <like></like>
                 <h1>My First Angular 2 App</h1>
                 <favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
+                <i class="glyphicon glyphicon-star"></i>
                 <courses></courses>
                 <authors></authors>
                 <div (click)="onDivClick()">
                     <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'green' : 'black'" (click)="onClick($event)">Loving This Stuff!</button>
+                    <vote></vote>
                 </div>
                `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoteComponent]
 })
 
 export class AppComponent {
