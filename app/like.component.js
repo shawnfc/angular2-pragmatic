@@ -28,18 +28,18 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.likeCount += this.iLike ? 1 : -1;
                 };
                 __decorate([
-                    core_1.Input, 
+                    core_1.Input(), 
                     __metadata('design:type', Object)
                 ], LikeComponent.prototype, "likeCount", void 0);
                 __decorate([
-                    core_1.Input, 
+                    core_1.Input(), 
                     __metadata('design:type', Object)
                 ], LikeComponent.prototype, "iLike", void 0);
                 LikeComponent = __decorate([
                     core_1.Component({
                         selector: 'like',
-                        templateUrl: "app/like.template.html",
-                        styles: ["\n        .glyphicon {\n            color: #ccc;\n            cursor: pointer;\n        }\n        .highlighted {\n            color: deeppink;\n        }\n    "]
+                        templateUrl: 'app/templates/like.template.html',
+                        styles: ["\n        .glyphicon-heart {\n            color: #ccc;\n            cursor: pointer;\n        }\n        .highlighted {\n            color: deeppink;\n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], LikeComponent);

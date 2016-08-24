@@ -2,9 +2,9 @@ import {Component, Input} from 'angular2/core'
 
 @Component({
     selector: 'like',
-    templateUrl: "app/like.template.html",
+    templateUrl: 'app/templates/like.template.html',
     styles: [`
-        .glyphicon {
+        .glyphicon-heart {
             color: #ccc;
             cursor: pointer;
         }
@@ -15,8 +15,8 @@ import {Component, Input} from 'angular2/core'
 })
 
 export class LikeComponent {
-    @Input likeCount = 0;
-    @Input iLike = false;
+    @Input()likeCount = 0;
+    @Input()iLike = false;
 
     onClick() {
         this.iLike = !this.iLike;

@@ -20,12 +20,39 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             VoteComponent = (function () {
                 function VoteComponent() {
+                    this.voteCount = 0;
+                    this.myVote = 0;
+                    this.vote = new core_1.EventEmitter();
                 }
+                VoteComponent.prototype.upVote = function () {
+                    if (this.myVote == 1)
+                        return;
+                    this.myVote++;
+                    this.vote.emit({ newVote: this.myVote });
+                };
+                VoteComponent.prototype.downVote = function () {
+                    if (this.myVote == -1)
+                        return;
+                    this.myVote--;
+                    this.vote.emit({ newVote: this.myVote });
+                };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], VoteComponent.prototype, "voteCount", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], VoteComponent.prototype, "myVote", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], VoteComponent.prototype, "vote", void 0);
                 VoteComponent = __decorate([
                     core_1.Component({
                         selector: 'vote',
-                        templateUrl: 'app/vote.template.html',
-                        styleUrls: ['css/custom-styles.css']
+                        templateUrl: 'app/templates/vote.template.html',
+                        styles: ["\n        .glyphicon {\n            cursor: pointer;\n        }\n        .voteCont {\n            width: 20px;\n            text-align: center;\n            color: #999;\n        }\n        .highlight {\n            color: orange;\n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], VoteComponent);
