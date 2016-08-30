@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./courses.component", "./authors.component", "./favorite.component", './like.component', './vote.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './Zippy.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,58 +10,26 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1, favorite_component_1, like_component_1, vote_component_1;
+    var core_1, Zippy_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (courses_component_1_1) {
-                courses_component_1 = courses_component_1_1;
-            },
-            function (authors_component_1_1) {
-                authors_component_1 = authors_component_1_1;
-            },
-            function (favorite_component_1_1) {
-                favorite_component_1 = favorite_component_1_1;
-            },
-            function (like_component_1_1) {
-                like_component_1 = like_component_1_1;
-            },
-            function (vote_component_1_1) {
-                vote_component_1 = vote_component_1_1;
+            function (Zippy_component_1_1) {
+                Zippy_component_1 = Zippy_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.imageUrl = "https://i1.sndcdn.com/avatars-000045458808-yey622-t500x500.jpg";
-                    this.isActive = true;
-                    this.post = {
-                        title: "title",
-                        isFavorite: true,
-                        myVote: 0,
-                        voteCount: 10
-                    };
+                    this.viewMode = 'map';
                 }
-                AppComponent.prototype.onDivClick = function () {
-                    console.log("handled by div");
-                };
-                AppComponent.prototype.onClick = function ($event) {
-                    $event.stopPropagation();
-                    alert("Yes, you clicked the button!");
-                };
-                AppComponent.prototype.onFavoriteChange = function ($event) {
-                    console.log($event);
-                };
-                AppComponent.prototype.onVote = function ($event) {
-                    console.log($event);
-                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n                <img [src]=\"imageUrl\" alt=\"Shawn Conrad\" id=\"mainImage\">\n                <vote \n                [myVote]=\"post.myVote\" \n                [voteCount]=\"post.voteCount\" \n                (vote)=\"onVote($event)\"></vote><br>\n                <h1>My First Angular 2 App</h1>\n                <like></like><br>\n                <favorite [is-favorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n                <courses></courses>\n                <authors></authors>\n                <div (click)=\"onDivClick()\">\n                    <button class=\"btn btn-primary\" [style.backgroundColor]=\"isActive ? 'green' : 'black'\" (click)=\"onClick($event)\">Loving This Stuff!</button>\n                    \n                </div>\n               ",
-                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, favorite_component_1.FavoriteComponent, like_component_1.LikeComponent, vote_component_1.VoteComponent]
+                        template: "\n        <ul class=\"nav nav-pills\">\n            <li [class.active]=\"viewMode == 'map'\"><a (click)=\"viewMode = 'map'\">Map View</a></li>\n            <li [class.active]=\"viewMode == 'list'\"><a (click)=\"viewMode = 'list'\">List View</a></li>\n        </ul>\n        <div [ngSwitch]=\"viewMode\">\n        <template [ngSwitchWhen]=\"'map'\" ngSwitchDefault>Map View Content</template>\n        <template [ngSwitchWhen]=\"'list'\">List View Content</template>\n        \n        <zippy>\n            <div class=\"zipheading1\"></div>\n            <div class=\"zipbody1\">The body for Zip 1</div>\n            <div class=\"zipheading2\">Zip Heading 2</div>\n            <div class=\"zipbody2\">The body for Zip 2</div>\n        </zippy>\n</div>\n    ",
+                        directives: [Zippy_component_1.ZippyComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
