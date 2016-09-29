@@ -1,14 +1,10 @@
-import {Component} from 'angular2/core'
-import {ContactFormComponent} from './contact-form.component'
+// Root Component
+
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'my-app',
-    template: `
-        <contact-form></contact-form>
-    `,
-    directives: [ContactFormComponent]
-
+    template: '<h1>My Angular App</h1>'
 })
 
-export class AppComponent {
-}
+export class AppComponent {}
