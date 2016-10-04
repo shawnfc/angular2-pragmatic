@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var course_service_1 = require('./course.service');
+var auto_grow_directive_1 = require("./auto-grow.directive");
 var CoursesComponent = (function () {
     // create a constructor that takes a parameter name where the type is our service
     function CoursesComponent(courseService) {
@@ -19,7 +20,8 @@ var CoursesComponent = (function () {
     CoursesComponent = __decorate([
         core_1.Component({
             selector: 'courses',
-            template: "\n                <h2>{{title}}</h2>\n                <ul>\n                    <li *ngFor=\"let course of courses\">{{course}}</li>\n                </ul>\n            "
+            template: "\n                <h2>{{title}}</h2>\n                <input type=\"text\" autoGrow>\n                <ul>\n                    <li *ngFor=\"let course of courses\">{{course}}</li>\n                </ul>\n            ",
+            directives: [auto_grow_directive_1.AutoGrowDirective]
         }), 
         __metadata('design:paramtypes', [course_service_1.CourseService])
     ], CoursesComponent);
