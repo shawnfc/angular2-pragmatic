@@ -1,4 +1,3 @@
-//Entry point of the application
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,22 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var courses_component_1 = require("./courses.component");
-var AppModule = (function () {
-    function AppModule() {
+var course_service_1 = require('./course.service');
+var CoursesComponent = (function () {
+    // create a constructor that takes a parameter name where the type is our service
+    function CoursesComponent(courseService) {
+        this.title = "Our Courses";
+        this.courses = courseService.getCourses();
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            //declarations should hold components not services
-            declarations: [app_component_1.AppComponent, courses_component_1.CoursesComponent],
-            bootstrap: [app_component_1.AppComponent]
+    CoursesComponent = __decorate([
+        core_1.Component({
+            selector: 'courses',
+            template: "\n                <h2>{{title}}</h2>\n                <ul>\n                    <li *ngFor=\"let course of courses\">{{course}}</li>\n                </ul>\n            "
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+        __metadata('design:paramtypes', [course_service_1.CourseService])
+    ], CoursesComponent);
+    return CoursesComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.CoursesComponent = CoursesComponent;
+//# sourceMappingURL=courses.component.js.map

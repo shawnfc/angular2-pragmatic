@@ -1,4 +1,3 @@
-// Root Component
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,14 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+// Root Component
 var core_1 = require('@angular/core');
+var course_service_1 = require("./course.service");
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My Angular App</h1>'
+            template: '<h1>Hello Angular 2</h1><courses></courses>',
+            providers: [course_service_1.CourseService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
