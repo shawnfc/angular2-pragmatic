@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var course_service_1 = require('./course.service');
-var auto_grow_directive_1 = require("./auto-grow.directive");
+var course_service_1 = require('./course.service.ts');
+var auto_grow_directive_1 = require("./auto-grow.directive.ts");
 var CoursesComponent = (function () {
     // create a constructor that takes a parameter name where the type is our service
     function CoursesComponent(courseService) {

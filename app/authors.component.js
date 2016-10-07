@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var authors_service_1 = require("./authors.service");
+var authors_service_1 = require("./authors.service.ts");
 var AuthorsComponent = (function () {
     function AuthorsComponent(authorService) {
         this.title = "Authors";

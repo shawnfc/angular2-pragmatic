@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 // Root Component
 var core_1 = require('@angular/core');
-var course_service_1 = require("./course.service");
-var authors_service_1 = require("./authors.service");
+var course_service_1 = require("./course.service.ts");
+var authors_service_1 = require("./authors.service.ts");
 var AppComponent = (function () {
     function AppComponent() {
     }
